@@ -12,37 +12,23 @@ A basic Ionic client web application which consumes the RestAPI Backend. [Covere
 
 ### Setup Node Environment
 
-You'll need to create a new node server. Open a new terminal within the project directory and run:
+1. Install dependencies: `npm install`
+2. Run the development server with `npm run dev`
+3. Check requests with [Postman collection](./cloud-cdnd-c2-final.postman_collection.json)
 
-1. Initialize a new project: `npm i`
-2. run the development server with `npm run dev`
+### Building deployment package
 
-### Create a new endpoint in the server.ts file
-
-The starter code has a task for you to complete an endpoint in `./src/server.ts` which uses query parameter to download an image from a public URL, filter the image, and return the result.
-
-We've included a few helper functions to handle some of these concepts and we're importing it for you at the top of the `./src/server.ts`  file.
-
-```typescript
-import {filterImageFromURL, deleteLocalFiles} from './util/util';
+```
+npm run build
 ```
 
-### Deploying your system
+### Deployment
 
-Follow the process described in the course to `eb init` a new application and `eb create` a new environment to deploy your image-filter service! Don't forget you can use `eb deploy` to push changes.
+```
+eb create
+eb deploy
+```
 
-## Stand Out (Optional)
-
-### Refactor the course RESTapi
-
-If you're feeling up to it, refactor the course RESTapi to make a request to your newly provisioned image server.
-
-### Authentication
-
-Prevent requests without valid authentication headers.
-> !!NOTE if you choose to submit this, make sure to add the token to the postman collection and export the postman collection file to your submission so we can review!
-
-### Custom Domain Name
-
-Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
-> !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
+### Check running status
+*  [Elastic Beanstalk Link](http://udagram-image-filtering-microservice-dev.eu-central-1.elasticbeanstalk.com)
+*  [deployment_screenshot](./deployment_screenshots/deployment_screenshot.png)
